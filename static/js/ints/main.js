@@ -77,7 +77,6 @@ new Vue({
 		changeMargin: function() {
 			var _self = this;
 			var docWidth = document.body.clientWidth;
-			console.log(docWidth);
 			if (docWidth <= 1200) {
 				_self.menuBtn = true;
 				_self.menu = false;
