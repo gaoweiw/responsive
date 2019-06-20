@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+		<link rel="stylesheet" href="../static/css/reset.css">
+		<link rel="stylesheet" href="../static/css/main.css">
+		<link rel="stylesheet" href="../static/css/font.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+	<body>
+		<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器,请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+    以获得更好的体验！</p>
+<![endif]-->
+		<div id="app" v-cloak>
+			<header class="header">
+				<div class="admin-header clearfix">
+					<div class="gw-logo"></div>
+
+					<button class="gw-menu-btn" v-if="menuBtn" @click="clickMenu"> <span class="iconfont icon-caidan"></span></button>
+					<div class="gw-menu" :style="showMenu" v-if="menu">
+						<div v-for="m in menuList" :class="active==m.id?'active':''" @mousemove="hover(m.id)"><a href="javascript:;"> {{m.name}}</a></div>
+						
+					</div>
+				</div>
+			</header>
+
+			<div class="admin-main">
+				<!-- content start -->
+				<div class="admin-content-item">
+					<div class="admin-content-title">
+						<p>PRODUCT SOLUTIONS</p>
+						<div class="admin-content-name">产品方案</div>
+					</div>
+					<div class="admin-content-body clearfix">
+						<div class="gw-cotent-item" v-for="p in product">
+							<div class="gw-cotent-min">
+								<img :src="p.imgUrl" alt="">
+								<div class="gw-cotent-name">
+									<p>{{p.name}}</p>
+									<small>{{p.english}}</small>
+								</div>
+								<div class="gw-cotent-hr-box">
+									<div class="gw-cotent-hr"></div>
+									<div class="gw-cotent-hr-hover"></div>
+								</div>
+								<div class="gw-cotent-effect">
+									{{p.effect}}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="admin-content-item admin-baohang clearfix">
+					<div class="admin-content-title">
+						<p class="white">INTRODUCTION TO BAOHANG</p>
+						<div class="admin-content-name white">宝航简介</div>
+					</div>
+					<div class="admin-content-under clearfix">
+						<div class="gw-cotent-under">
+							<p class="red">5000<span class="white"> 个</span></p>
+							<div class="gw-cotent-under-x">成功案例</div>
+						</div>
+						<div class="gw-cotent-under">
+							<p class="white">8<span class="white"> 个</span></p>
+							<div class="gw-cotent-under-x">人才服务</div>
+						</div>
+						<div class="gw-cotent-under">
+							<p class="white">5<span class="white"> 大</span></p>
+							<div class="gw-cotent-under-x">完善业务体系</div>
+						</div>
+						<div class="gw-cotent-under">
+							<p class="white">200<span class="white"> 万份</span></p>
+							<div class="gw-cotent-under-x">简历资源储备</div>
+						</div>
+						<div class="gw-cotent-under-down">
+							<p class="white">100000<span class="white"> 次</span></p>
+							<div class="gw-cotent-under-x">累计好评</div>
+						</div>
+					</div>
+					<div class="gw-cotent-under-btn white">
+						<span class="iconfont icon-clock"></span>
+						一分钟了解宝航
+					</div>
+				</div>
+				<!-- content end -->
+
+			</div>
+		</div>
+
+
+
+		<!--[if lt IE 9]>
+　　　　		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+　　		<![endif]-->
+
+		<script src="../static/js/vue.js" type="text/jscript"></script>
+		<script src="../static/js/ints/main.js"></script>
+	</body>
+</html>
